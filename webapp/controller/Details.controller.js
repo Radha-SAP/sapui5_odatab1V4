@@ -13,21 +13,21 @@ sap.ui.define([
 
         return Controller.extend("ar.com.odatav4b1project2.controller.Details", {
             onInit: function () {
-                // initialize the Model
-                var sServiceUrl = "/proxy/b1s/v2/";
-                var oModel = new ODataModel({
-                    serviceUrl: sServiceUrl,
-                    synchronizationMode: "None",
-                    groupId: "$direct"
-                });
-                oModel.setDefaultBindingMode("TwoWay");
+                // initialize the Model in case you want to call a fresh API
+                // var sServiceUrl = "/proxy/b1s/v2/";
+                // var oModel = new ODataModel({
+                //     serviceUrl: sServiceUrl,
+                //     synchronizationMode: "None",
+                //     groupId: "$direct"
+                // });
+                // oModel.setDefaultBindingMode("TwoWay");
 
 
                 var BusinessPart = [];
                 var JsonoModel = new JSONModel(BusinessPart);
                 this.getView().setModel(JsonoModel, "BP"); // Initialze dummy Model for update
 
-                this.getView().setModel(oModel, "BPRead");
+                // this.getView().setModel(oModel, "BPRead"); //Set Model in case of fresh API
 
                 //Routing
                 var oRouter = this.getOwnerComponent().getRouter();
@@ -40,7 +40,8 @@ sap.ui.define([
 
             },
             readData: function (CardCode) {
-                var oModel = this.getView().getModel("BPRead");
+                // var oModel = this.getView().getModel("BPRead"); //Read Model in case of fresh API
+                var oModel = this.getView().getModel(); //Read this in case model is defined in Manifest
                 var oView = this.getView();
                 // Create the entity set binding for the Business Partner
                 var oEntitySetBinding = oModel.bindContext('/BusinessPartners' + "('" + CardCode + "')");
@@ -78,7 +79,8 @@ sap.ui.define([
                 } catch { }
             },
             onSave: function () {
-                var oModel = this.getView().getModel("BPRead");
+                // var oModel = this.getView().getModel("BPRead"); //Read Model in case of fresh API
+                var oModel = this.getView().getModel(); //Read this in case model is defined in Manifest
                 var oView = this.getView();
                 // Create a new entry in the entity set using createEntry method
                 var sEntitySet = "/BusinessPartners";
@@ -104,7 +106,7 @@ sap.ui.define([
                     oModel.refresh();
                     MessageToast.show("New Card Code createdclea.");
                     // var aResponses = oData.__batchResponses;
-                }).catch(function (oError) {
+                }.bind(this)).catch(function (oError) {
                     MessageToast.show("Error creating new entry. Please try again.");
                 });
                 /////////////////////                
