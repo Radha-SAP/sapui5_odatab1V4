@@ -102,7 +102,7 @@ sap.ui.define([
                 oModel.submitBatch("$auto").then(function (oData) {
                     // Success handler for submitBatch
                     oModel.refresh();
-                    MessageToast.show("New Card Code created.");
+                    MessageToast.show("New Card Code createdclea.");
                     // var aResponses = oData.__batchResponses;
                 }).catch(function (oError) {
                     MessageToast.show("Error creating new entry. Please try again.");
