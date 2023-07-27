@@ -1,0 +1,47 @@
+<mvc:View controllerName="ar.com.odatav4b1project2.controller.Details"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:SimpleForm id="simpleForm" editable="false" layout="ResponsiveGridLayout" title="Simple Form">
+                <Label id="_IDGenLabel1" text="Card Code" />
+                <Input id="_IDGenInput1" value="{BP>/CardCode}" editable="false" />
+
+                <Label id="_IDGenLabel2" text="Card Name" />
+                <Input id="_IDGenInput2" value="{BP>/CardName}" editable="false" />
+
+                <Label id="_IDGenLabel3" text="Card Type" />
+                <Input id="_IDGenInput3" value="{BP>/CardType}" editable="false" />
+
+                <Label id="_IDGenLabel4" text="Group Code" />
+                <Input id="_IDGenInput4" value="{BP>/GroupCode}" editable="false" />
+
+                <Label id="_IDGenLabel5" text="Address" />
+                <Input id="_IDGenInput5" value="{BP>/Address}" editable="false" />
+
+                <Label id="_IDGenLabel6" text="Zip Code" />
+                <Input id="_IDGenInput6" value="{BP>/ZipCode}" editable="false" />
+
+                <Label id="_IDGenLabel7" text="Mail Address" />
+                <Input id="_IDGenInput7" value="{BP>/MailAddress}" editable="false" />
+
+                <Label id="_IDGenLabel8" text="Mail Zip Code" />
+                <Input id="_IDGenInput8" value="{BP>/MailZipCode}" editable="false" />
+
+                <Label id="_IDGenLabel9" text="Phone 1" />
+                <Input id="_IDGenInput9" value="{BP>/Phone1}" editable="false" />
+
+                <Label id="_IDGenLabel10" text="Phone 2" />
+                <Input id="_IDGenInput10" value="{BP>/Phone2}" editable="false" />
+
+                <Label id="_IDGenLabel11" text="Email Address" />
+                <Input id="_IDGenInput11" value="{BP>/EmailAddress}" editable="false" />
+            </f:SimpleForm>
+            <Button id="_IDGenButton1" text="Edit" press="onEdit" />
+            <Button id="_IDGenButton2" text="Save" press="onSave" />
+        </content>
+    </Page>
+</mvc:View>

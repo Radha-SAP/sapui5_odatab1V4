@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="ar.com.odatav4b1project2.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+    height="100%"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <VBox id="_IDGenVBox1">
+                <ComboBox
+                    id="_IDGenComboBox1"
+                    showSecondaryValues="true"
+                    items="{
+					path: '/BusinessPartners',
+					sorter: { path: 'CardCode' }
+				}"
+                >
+                    <core:ListItem
+                        id="_IDGenListItem1"
+                        key="{CardCode}"
+                        text="{CardCode}"
+                        additionalText="{CardName}"
+                    />
+                </ComboBox>
+                <Button
+                    id="_IDGenButton1"
+                    press="onNavigate"
+                    text="Show Details"
+                />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
