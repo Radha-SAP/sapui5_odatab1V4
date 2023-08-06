@@ -95,6 +95,10 @@ sap.ui.define([
                 //Clear below data as these are creating issues and giving error that entry already exist
                 oNewEntry.ContactPerson = "";
                 oNewEntry.ContactEmployees = [];
+                // oNewEntry.BillToState = "";
+                // oNewEntry.ShipToState = "";
+                // oNewEntry.BPAddresses = [];
+                // oNewEntry.ShipToDefault = "";
                 // Get the entity set binding to the root collection (no path)
                 var oEntitySetBinding = oModel.bindList(sEntitySet);
                 // Create a new context pointing to the entity set for creating a new entry
